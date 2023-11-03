@@ -7,7 +7,7 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getbooksBorrowedCount(books) {
-  const borrowedBooks = books.filter((book) => !book.borrows[0].returned);
+  const borrowedBooks = books.filter(({ borrows }) => !borrows[0].returned);
   return borrowedBooks.length;
 }
 
